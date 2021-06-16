@@ -1,0 +1,51 @@
+What program are we going to create? Use your brainstorming from the solo checkpoint to answer this question together.
+Among Us Clone
+
+What technologies will we use? The answer to this question is mostly already decided. 
+Just take a minute to remind yourselves of the language, libraries and anything else you plan on using.
+Python, Arcade, Random
+
+What features will we include? The goal of asking this question is to identify what will and what won't be included. 
+Use this simple feature planning guide to help you.
+Main Screen:
+    Play Button 
+    Help Button
+
+Game Screen:
+    Displays:
+        Scene
+        Players
+        Timer
+        Numbers of players left
+    Rules:
+        Player runs around trying to find other people. Once the player gets close enough, the other person is dead.
+        Scene will be a room of walls with bots running around
+        Once a person is dead, they will no longer be able to move
+        Bots be able to see when someone dies. Once they see someone die, the games is over
+
+Lose Screen:
+    Displays "You were discovered"
+
+Win Screen:
+    Displays "You win"
+
+Possible Feature:
+    Faster or Slower
+    More or Less Obstacles
+    Increase how close you need to be to kill someone
+    Kill button 
+
+Help Screen:
+    Rules of the game
+    Controls of the game
+
+What is your timeline? The answer to this question is mostly already decided. 
+Just take a minute to review the rest of the course schedule together.
+Week 10
+    Classes created
+Week 11
+    It almost works
+Week 12
+    Fixing small bugs
+Week 13
+    Release on the app store
