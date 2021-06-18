@@ -1,5 +1,5 @@
 What program are we going to create? Use your brainstorming from the solo checkpoint to answer this question together.
-Among Us Clone
+Pac-Man Clone
 
 What technologies will we use? The answer to this question is mostly already decided. 
 Just take a minute to remind yourselves of the language, libraries and anything else you plan on using.
@@ -16,24 +16,22 @@ Game Screen:
         Scene
         Players
         Timer
-        Numbers of players left
+        Score
+        Number of Lives left
     Rules:
-        Player runs around trying to find other people. Once the player gets close enough, the other person is dead.
-        Scene will be a room of walls with bots running around
-        Once a person is dead, they will no longer be able to move
-        Bots be able to see when someone dies. Once they see someone die, the games is over
+        Player will run around being chased by ghosts while they have to get as many points as possible. 
+        They collect points by running around collecting dots and food.
+        If the enemy collides with the player, they lose a life.
+        If the player runs into the wall, they lose a life. If lives reach 0, the game is over.
 
 Lose Screen:
-    Displays "You were discovered"
+    Displays the number of lives 0
 
 Win Screen:
-    Displays "You win"
+    Displays ...
 
-Possible Feature:
-    Faster or Slower
-    More or Less Obstacles
-    Increase how close you need to be to kill someone
-    Kill button 
+Possible Features:
+    
 
 Help Screen:
     Rules of the game
