@@ -19,16 +19,16 @@ Game Screen:
         Score
         Number of Lives left
     Rules:
-        Player will run around being chased by ghosts while they have to get as many points as possible. 
-        They collect points by running around collecting dots and food.
-        If the enemy collides with the player, they lose a life.
-        If the player runs into the wall, they lose a life. If lives reach 0, the game is over.
+        (1)Player will run around being chased by ghosts while they have to get as many points as possible. 
+        (2)They collect points by running around collecting dots and food.
+        (1)If the enemy collides with the player, they lose a life.
+        (2)If the player runs into the wall, they lose a life. If lives reach 0, the game is over.
 
 Lose Screen:
-    Displays the number of lives 0
+    Displays the number of lives 0 and "You lose"
 
 Win Screen:
-    Displays ...
+    Displays "You win"
 
 Possible Features:
     
