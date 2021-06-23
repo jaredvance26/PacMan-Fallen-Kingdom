@@ -4,12 +4,12 @@ from pacmangame.pacman import PacMan
 
 
 class Director(arcade.Window):
-    def __init__(self, cast, script):
+    def __init__(self, cast, script, input_service):
         """ Initialize the game """
         super().__init__(constants.MAX_X, constants.MAX_Y, constants.SCREEN_TITLE)
         self._cast = cast
         self._script = script
-        #self._input_service = input_service
+        self._input_service = input_service
 
     def setup(self):
         arcade.set_background_color(arcade.color.BLACK)
@@ -22,11 +22,11 @@ class Director(arcade.Window):
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
-        # self._cue_action("input")
+        self._cue_action("input")
 
     def on_key_release(self, symbol, modifiers):
         self._input_service.remove_key(symbol, modifiers)
-        # self._cue_action("input")
+        self._cue_action("input")
 
     def _cue_action(self, tag):
         """Executes the actions with the given tag.

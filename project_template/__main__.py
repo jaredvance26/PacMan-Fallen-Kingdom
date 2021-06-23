@@ -30,7 +30,7 @@ def main():
     script["input"] = [control_actors_action]
     script["update"] = [move_actors_action, handle_collisions_action]
 
-    director = Director(cast, script)
+    director = Director(cast, script, input_service)
     director.setup()
 
     arcade.run()

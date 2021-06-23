@@ -26,4 +26,8 @@ class ControlActorsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
-        pass
+        direction = self._input_service.get_direction().scale(constants.MOVE_SCALE)
+        
+        pacman = cast['pacman'][0]
+        pacman.change_x = direction.get_x()
+        pacman.change_y = direction.get_y()

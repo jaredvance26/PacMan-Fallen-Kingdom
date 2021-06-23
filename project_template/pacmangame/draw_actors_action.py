@@ -27,6 +27,7 @@ class DrawActorsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
+        self._output_service.clear_screen()
         pacman = cast['pacman'][0]
         
         self._output_service.draw_actor(pacman)
