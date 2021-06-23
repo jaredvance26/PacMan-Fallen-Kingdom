@@ -1,5 +1,5 @@
 import sys
-from PacMan import constants
+from pacmangame import constants
 import arcade
 
 class ArcadeOutputService(arcade.Window):

@@ -1,5 +1,5 @@
-from point import Point
-import constants
+from pacmangame.point import Point
+from pacmangame import constants
 import arcade
 
 class PacMan(arcade.Sprite):
