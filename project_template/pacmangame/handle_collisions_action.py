@@ -15,4 +15,13 @@ class HandleCollisionsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
-        pass
+        pacman = cast['pacman'][0]
+
+        if pacman.top > constants.MAX_Y:
+            pacman.top = constants.MAX_Y
+        elif pacman.right > constants.MAX_X:
+            pacman.left = 0
+        elif pacman.left < 0:
+            pacman.right = constants.MAX_X
+        elif pacman.bottom < 0:
+            pacman.bottom = 0
