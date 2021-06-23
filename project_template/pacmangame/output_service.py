@@ -17,7 +17,7 @@ class ArcadeOutputService(arcade.Window):
         
         Args:
         """
-        super().__init__(constants.MAX_X, constants.MAX_Y, constants.SCREEN_TITLE)
+        pass 
         
 
     def clear_screen(self):
