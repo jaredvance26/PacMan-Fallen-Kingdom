@@ -5,7 +5,7 @@ MAX_Y = 600
 SCREEN_TITLE = 'Pac-Man'
 
 ACTOR_SCALE = .5
-MOVE_SCALE = 1
+MOVE_SCALE = 7
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 PACMAN_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-pac-man.png')

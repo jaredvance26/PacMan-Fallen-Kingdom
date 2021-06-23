@@ -32,7 +32,7 @@ def main():
 
     director = Director(cast, script, input_service)
     director.setup()
-
+    
     arcade.run()
 
 if __name__ == '__main__':
