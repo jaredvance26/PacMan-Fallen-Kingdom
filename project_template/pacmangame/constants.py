@@ -1,4 +1,5 @@
 import os
+import arcade
 
 MAX_X = 800
 MAX_Y = 600
@@ -24,3 +25,4 @@ BLINKY_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-blinky.png')
 CLYDE_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-clyde.png')
 INKY_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-inky.png')
 PINKY_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-pinky.png')
+MOVE_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'pac-assets', 'pacman_chomp.wav'))

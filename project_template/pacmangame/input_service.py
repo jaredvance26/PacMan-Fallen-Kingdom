@@ -1,5 +1,6 @@
 import sys
 from pacmangame.point import Point
+from pacmangame import constants
 
 import arcade
 
@@ -35,13 +36,17 @@ class ArcadeInputService:
 
         if arcade.key.LEFT in self._keys:
             x = -1
+           
         elif arcade.key.RIGHT in self._keys:
             x = 1
+            
 
         if arcade.key.UP in self._keys:
             y = 1
+            
         elif arcade.key.DOWN in self._keys:
             y = -1
+            
 
         velocity = Point(x, y)
         return velocity
