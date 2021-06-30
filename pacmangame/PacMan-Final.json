@@ -32,7 +32,7 @@
         {
          "columns":1,
          "firstgid":1,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Right Tile.png",
+         "image":"..\/tiles\/Right Tile.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -45,7 +45,7 @@
         {
          "columns":1,
          "firstgid":2,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Left Tile.png",
+         "image":"..\/tiles\/Left Tile.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -58,7 +58,7 @@
         {
          "columns":1,
          "firstgid":3,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Right Corner.png",
+         "image":"..\/tiles\/Right Corner.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -71,7 +71,7 @@
         {
          "columns":1,
          "firstgid":4,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Edge Corner.png",
+         "image":"..\/tiles\/Edge Corner.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -84,7 +84,7 @@
         {
          "columns":1,
          "firstgid":5,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Edge Corner 2.png",
+         "image":"..\/tiles\/Edge Corner 2.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -97,7 +97,7 @@
         {
          "columns":1,
          "firstgid":6,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Edge Corner 3.png",
+         "image":"..\/tiles\/Edge Corner 3.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -110,7 +110,7 @@
         {
          "columns":1,
          "firstgid":7,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Edge Corner 4.png",
+         "image":"..\/tiles\/Edge Corner 4.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -123,7 +123,7 @@
         {
          "columns":1,
          "firstgid":8,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Bottom Edge Tile.png",
+         "image":"..\/tiles\/Bottom Edge Tile.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -136,7 +136,7 @@
         {
          "columns":1,
          "firstgid":9,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Corner 1.png",
+         "image":"..\/tiles\/Inner Corner 1.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -149,7 +149,7 @@
         {
          "columns":1,
          "firstgid":10,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Line Bottom.png",
+         "image":"..\/tiles\/Inner Line Bottom.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -162,7 +162,7 @@
         {
          "columns":1,
          "firstgid":11,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Corner 3.png",
+         "image":"..\/tiles\/Inner Corner 3.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -175,7 +175,7 @@
         {
          "columns":1,
          "firstgid":12,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Corner 4.png",
+         "image":"..\/tiles\/Inner Corner 4.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -188,7 +188,7 @@
         {
          "columns":1,
          "firstgid":13,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Line Left.png",
+         "image":"..\/tiles\/Inner Line Left.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -201,7 +201,7 @@
         {
          "columns":1,
          "firstgid":14,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Line Top.png",
+         "image":"..\/tiles\/Inner Line Top.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -214,7 +214,7 @@
         {
          "columns":1,
          "firstgid":15,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Line Right.png",
+         "image":"..\/tiles\/Inner Line Right.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -227,7 +227,7 @@
         {
          "columns":1,
          "firstgid":16,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Top Edge Tile.png",
+         "image":"..\/tiles\/Top Edge Tile.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -240,7 +240,7 @@
         {
          "columns":1,
          "firstgid":17,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Inner Corner 2.png",
+         "image":"..\/tiles\/Inner Corner 2.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -253,7 +253,7 @@
         {
          "columns":1,
          "firstgid":18,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost Door.png",
+         "image":"..\/tiles\/Ghost Door.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -266,7 +266,7 @@
         {
          "columns":1,
          "firstgid":19,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Block-Bottom.png",
+         "image":"..\/tiles\/Ghost-Block-Bottom.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -279,7 +279,7 @@
         {
          "columns":1,
          "firstgid":20,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Block-Top.png",
+         "image":"..\/tiles\/Ghost-Block-Top.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -292,7 +292,7 @@
         {
          "columns":1,
          "firstgid":21,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Corner-1.png",
+         "image":"..\/tiles\/Ghost-Corner-1.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -305,7 +305,7 @@
         {
          "columns":1,
          "firstgid":22,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Corner-2.png",
+         "image":"..\/tiles\/Ghost-Corner-2.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -318,7 +318,7 @@
         {
          "columns":1,
          "firstgid":23,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Corner-3.png",
+         "image":"..\/tiles\/Ghost-Corner-3.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -331,7 +331,7 @@
         {
          "columns":1,
          "firstgid":24,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Corner-4.png",
+         "image":"..\/tiles\/Ghost-Corner-4.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -344,7 +344,7 @@
         {
          "columns":1,
          "firstgid":25,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost Door Left.png",
+         "image":"..\/tiles\/Ghost Door Left.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -357,7 +357,7 @@
         {
          "columns":1,
          "firstgid":26,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost Door Right.png",
+         "image":"..\/tiles\/Ghost Door Right.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -370,7 +370,7 @@
         {
          "columns":1,
          "firstgid":27,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Block-Left.png",
+         "image":"..\/tiles\/Ghost-Block-Left.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,
@@ -383,7 +383,7 @@
         {
          "columns":1,
          "firstgid":28,
-         "image":"..\/..\/..\/..\/..\/..\/Pictures\/Programming Classes\/Final Project\/Ghost-Block-Right.png",
+         "image":"..\/tiles\/Ghost-Block-Right.png",
          "imageheight":90,
          "imagewidth":90,
          "margin":0,

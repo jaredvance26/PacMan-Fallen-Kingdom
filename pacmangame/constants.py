@@ -6,7 +6,7 @@ MAX_Y = 600
 SCREEN_TITLE = 'Pac-Man'
 
 PATH = os.path.dirname(os.path.abspath(__file__))
-MAP = os.path.join(PATH, 'PacMan-Final.tmx')
+MAP = os.path.join(PATH, 'PacMan-Final.json')
 MAP_NAME = 'Pac-Man'
 
 ACTOR_SCALE = .25
