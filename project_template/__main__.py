@@ -18,21 +18,26 @@ def main():
     input_service = ArcadeInputService()
     
     cast = {}
-    sprite_list = arcade.SpriteList()
+    ghost_list = arcade.SpriteList()
     pacman = PacMan()
+
+
     
     pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y)
     blinky = Ghost(constants.BLINKY_IMAGE, constants.BLINKY_X, constants.BLINKY_Y)
     clyde = Ghost(constants.CLYDE_IMAGE, constants.CLYEDE_X, constants. CLYEDE_Y)
     inky = Ghost(constants.INKY_IMAGE, constants.INKY_X, constants.INKY_Y)
     
-    sprite_list.append(pinky)
-    sprite_list.append(blinky)
-    sprite_list.append(clyde)
-    sprite_list.append(inky)
+    ghost_list.append(blinky)
+    ghost_list.append(clyde)
+    ghost_list.append(inky)
+    ghost_list.append(pinky)
+
+   
 
     cast['pacman'] = [pacman]
-    cast['ghosts'] = sprite_list
+    cast['ghosts'] = ghost_list
+    
 
     script = {}
     draw_actors_action = DrawActorsAction(output_service)

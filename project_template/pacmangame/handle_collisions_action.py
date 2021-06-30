@@ -1,6 +1,7 @@
 import random
 from pacmangame import constants
 from pacmangame.action import Action
+import arcade
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -16,6 +17,7 @@ class HandleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         pacman = cast['pacman'][0]
+        ghosts = cast['ghosts']
 
         if pacman.top > constants.MAX_Y:
             pacman.top = constants.MAX_Y
@@ -25,3 +27,12 @@ class HandleCollisionsAction(Action):
             pacman.right = constants.MAX_X
         elif pacman.bottom < 0:
             pacman.bottom = 0
+        
+    
+        
+
+        if len(pacman.collides_with_list(ghosts)) > 0:
+            arcade.play_sound(constants.DEATH_SOUND)
+            arcade.close_window()
+            
+        
