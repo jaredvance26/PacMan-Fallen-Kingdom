@@ -35,8 +35,6 @@ def main():
 
    
 
-
-
     cast['pacman'] = [pacman]
     cast['ghosts'] = ghost_list
     
