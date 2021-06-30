@@ -5,6 +5,7 @@ MAX_X = 800
 MAX_Y = 600
 SCREEN_TITLE = 'Pac-Man'
 
+PATH = os.path.dirname(os.path.abspath(__file__))
 MAP = os.path.join(PATH, 'PacMan-Final.tmx')
 MAP_NAME = 'Pac-Man'
 
@@ -22,7 +23,6 @@ INKY_Y = MAX_Y/2
 PINKY_Y = MAX_Y/2
 
 
-PATH = os.path.dirname(os.path.abspath(__file__))
 PACMAN_IMAGE = os.path.join(PATH, '..', 'images', 'character-pac-man.png')
 BLINKY_IMAGE = os.path.join(PATH, '..', 'images', 'character-blinky.png')
 CLYDE_IMAGE = os.path.join(PATH, '..', 'images', 'character-clyde.png')

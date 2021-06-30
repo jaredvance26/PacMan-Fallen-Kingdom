@@ -38,6 +38,7 @@ def main():
     map = arcade.tilemap.read_tmx(constants.MAP)
     map_name = constants.MAP_NAME
     wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = map_name, scaling = constants.ACTOR_SCALE, use_spatial_hash = True)
+    physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
     
     #Adding to cast dictionary
     cast['pacman'] = [pacman]
@@ -49,12 +50,12 @@ def main():
     move_actors_action = MoveActorsAction()
     handle_collisions_action = HandleCollisionsAction()
     control_actors_action = ControlActorsAction(input_service)
-
+    #Running script
     script["output"] = [draw_actors_action]
     script["input"] = [control_actors_action]
     script["update"] = [move_actors_action, handle_collisions_action]
 
-    director = Director(cast, script, input_service)
+    director = Director(cast, script, input_service, wall_list)
     director.setup()
 
     arcade.run()
