@@ -2,11 +2,11 @@ import os
 import arcade
 
 MAX_X = 800
-MAX_Y = 600
+MAX_Y = 770
 SCREEN_TITLE = 'Pac-Man'
 
 PATH = os.path.dirname(os.path.abspath(__file__))
-MAP = os.path.join(PATH, 'PacMan-Final.json')
+MAP = os.path.join(PATH, 'PacMan-Final.tmx')
 MAP_NAME = 'Pac-Man'
 
 ACTOR_SCALE = .25
