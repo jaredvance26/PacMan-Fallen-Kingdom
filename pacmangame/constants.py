@@ -5,6 +5,9 @@ MAX_X = 800
 MAX_Y = 600
 SCREEN_TITLE = 'Pac-Man'
 
+MAP = os.path.join(PATH, 'PacMan-Final.tmx')
+MAP_NAME = 'Pac-Man'
+
 ACTOR_SCALE = .25
 MOVE_SCALE = 7
 
@@ -20,10 +23,10 @@ PINKY_Y = MAX_Y/2
 
 
 PATH = os.path.dirname(os.path.abspath(__file__))
-PACMAN_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-pac-man.png')
-BLINKY_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-blinky.png')
-CLYDE_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-clyde.png')
-INKY_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-inky.png')
-PINKY_IMAGE = os.path.join(PATH, '..', 'pac-assets', 'character-pinky.png')
-MOVE_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'pac-assets', 'pacman_chomp.wav'))
-DEATH_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'pac-assets', 'pacman_death.wav'))
+PACMAN_IMAGE = os.path.join(PATH, '..', 'images', 'character-pac-man.png')
+BLINKY_IMAGE = os.path.join(PATH, '..', 'images', 'character-blinky.png')
+CLYDE_IMAGE = os.path.join(PATH, '..', 'images', 'character-clyde.png')
+INKY_IMAGE = os.path.join(PATH, '..', 'images', 'character-inky.png')
+PINKY_IMAGE = os.path.join(PATH, '..', 'images', 'character-pinky.png')
+MOVE_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'sounds', 'pacman_chomp.wav'))
+DEATH_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'sounds', 'pacman_death.wav'))
