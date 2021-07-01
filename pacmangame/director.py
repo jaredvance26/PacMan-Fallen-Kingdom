@@ -16,6 +16,7 @@ class Director(arcade.Window):
     def setup(self):
         """ Initalizes the screen """
         arcade.set_background_color(arcade.color.BLACK)
+        arcade.play_sound(constants.START_SOUND)
 
     def on_update(self, delta_time):
         self._cue_action("update")
