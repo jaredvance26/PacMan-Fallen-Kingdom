@@ -34,8 +34,10 @@ class HandleCollisionsAction(Action):
             
 
         
+
+
     
-        
+    
 
         if len(pacman.collides_with_list(ghosts)) > 0:
             arcade.play_sound(constants.DEATH_SOUND)
