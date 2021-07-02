@@ -34,11 +34,13 @@ class HandleCollisionsAction(Action):
             
 
         
-
-
-    
-    
-
+        #Handle collisions to the wall
+        for i in walls: 
+            if len(pacman.collides_with_list(walls)) > 0:
+                pacman.center_x = i
+                pacman.center_y = i
+        
+        #Handle collisions to ghosts
         if len(pacman.collides_with_list(ghosts)) > 0:
             arcade.play_sound(constants.DEATH_SOUND)
             arcade.close_window()
