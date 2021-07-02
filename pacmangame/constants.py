@@ -1,7 +1,7 @@
 import os
 import arcade
 
-MAX_X = 800
+MAX_X = 635
 MAX_Y = 770
 SCREEN_TITLE = 'Pac-Man'
 
@@ -10,17 +10,21 @@ MAP = os.path.join(PATH, 'PacMan-Final.tmx')
 MAP_NAME = 'Pac-Man'
 
 ACTOR_SCALE = .25
+MAP_SCALE = .25
 MOVE_SCALE = 7
 
-BLINKY_X = MAX_X/2
-CLYEDE_X = MAX_X/2 - 50
-INKY_X = MAX_X/2 + 50
-PINKY_X = MAX_X/2 + 100
+PAC_MAN_X = MAX_X/2
+PAC_MAN_Y = MAX_Y/2.21
 
-BLINKY_Y = MAX_Y/2
-CLYEDE_Y = MAX_Y/2
-INKY_Y = MAX_Y/2
-PINKY_Y = MAX_Y/2
+BLINKY_X = MAX_X/2.1
+CLYEDE_X = BLINKY_X - 25
+INKY_X = BLINKY_X + 25
+PINKY_X = BLINKY_X + 50
+
+BLINKY_Y = MAX_Y/1.85
+CLYEDE_Y = BLINKY_Y
+INKY_Y = BLINKY_Y
+PINKY_Y = BLINKY_Y
 
 
 PACMAN_IMAGE = os.path.join(PATH, '..', 'images', 'character-pac-man.png')
