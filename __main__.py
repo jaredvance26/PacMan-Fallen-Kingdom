@@ -38,13 +38,14 @@ def main():
     map = arcade.tilemap.read_tmx(constants.MAP)
     map_name = constants.MAP_NAME
     wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.MAP_SCALE, use_spatial_hash = True)
-    wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Food', scaling = constants.MAP_SCALE, use_spatial_hash = True)
+    food_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Food', scaling = constants.MAP_SCALE, use_spatial_hash = True)
     physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
     
     #Adding to cast dictionary
     cast['pacman'] = [pacman]
     cast['ghosts'] = ghost_list
     cast['walls'] = wall_list
+    cast['food'] = food_list
     
     #Creating script
     script = {}
@@ -58,7 +59,7 @@ def main():
     script["input"] = [control_actors_action]
     script["update"] = [move_actors_action, handle_collisions_action]
 
-    director = Director(cast, script, input_service, wall_list)
+    director = Director(cast, script, input_service)
     director.setup()
 
     arcade.run()

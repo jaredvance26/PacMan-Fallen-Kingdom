@@ -4,14 +4,14 @@ from pacmangame.pacman import PacMan
 
 
 class Director(arcade.Window):
-    def __init__(self, cast, script, input_service, walls):
+    def __init__(self, cast, script, input_service):
         """ Initialize the game """
         super().__init__(constants.MAX_X, constants.MAX_Y, constants.SCREEN_TITLE)
         self._cast = cast
         self._script = script
         self._input_service = input_service
-        self.wall_list = walls
-        
+        self.wall_list = cast['walls']
+        self.food_list = cast['food']
 
     def setup(self):
         """ Initalizes the screen """
@@ -28,6 +28,7 @@ class Director(arcade.Window):
         self._cue_action("output")
         #Draw the map
         self.wall_list.draw()
+        self.food_list.draw()
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
