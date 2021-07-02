@@ -18,6 +18,7 @@ class HandleCollisionsAction(Action):
         """
         pacman = cast['pacman'][0]
         ghosts = cast['ghosts']
+        walls = cast['walls']
 
         if pacman.top > constants.MAX_Y:
             pacman.top = constants.MAX_Y
