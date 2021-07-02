@@ -17,9 +17,12 @@ class Director(arcade.Window):
         """ Initalizes the screen """
         arcade.set_background_color(arcade.color.BLACK)
         arcade.play_sound(constants.START_SOUND)
+        self.physics_engine = arcade.PhysicsEngineSimple(self._cast['pacman'][0],
+                                                         self.wall_list)
 
     def on_update(self, delta_time):
         self._cue_action("update")
+        self.physics_engine.update()
 
     def on_draw(self):
         self._cue_action("output")
