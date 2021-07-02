@@ -37,12 +37,13 @@ def main():
     #Creating Map
     map = arcade.tilemap.read_tmx(constants.MAP)
     map_name = constants.MAP_NAME
-    wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.ACTOR_SCALE, use_spatial_hash = True)
+    wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.MAP_SCALE, use_spatial_hash = True)
     physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
     
     #Adding to cast dictionary
     cast['pacman'] = [pacman]
     cast['ghosts'] = ghost_list
+    cast['walls'] = wall_list
     
     #Creating script
     script = {}
