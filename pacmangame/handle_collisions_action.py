@@ -18,9 +18,7 @@ class HandleCollisionsAction(Action):
         """
         pacman = cast['pacman'][0]
         ghosts = cast['ghosts']
-        walls = cast['walls']
-        
-        #Handles collisions to top bottom and side of the screen
+
         if pacman.top > constants.MAX_Y:
             pacman.top = constants.MAX_Y
         elif pacman.right > constants.MAX_X:
@@ -30,13 +28,13 @@ class HandleCollisionsAction(Action):
         elif pacman.bottom < 0:
             pacman.bottom = 0
         
-        #Handles collisions with ghosts
+
+
+    
+    
+
         if len(pacman.collides_with_list(ghosts)) > 0:
             arcade.play_sound(constants.DEATH_SOUND)
             arcade.close_window()
-
-        #Handle collisions to the wall
-        if len(pacman.collides_with_list(walls)) > 0:
-            pass
             
         
