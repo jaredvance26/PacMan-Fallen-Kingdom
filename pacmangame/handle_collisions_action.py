@@ -30,10 +30,10 @@ class HandleCollisionsAction(Action):
             pacman.bottom = 0
         
         #Handle collisions to the wall
-        for i in walls: 
-            if len(pacman.collides_with_list(walls)) > 0:
-                pacman.center_x = i
-                pacman.center_y = i
+        # for i in walls: 
+        #     if len(pacman.collides_with_list(walls)) > 0:
+        #         pacman.center_x = i
+        #         pacman.center_y = i
         
         #Handle collisions to ghosts
         if len(pacman.collides_with_list(ghosts)) > 0:

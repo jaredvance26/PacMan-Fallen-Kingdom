@@ -51,6 +51,7 @@ def main():
     move_actors_action = MoveActorsAction()
     handle_collisions_action = HandleCollisionsAction()
     control_actors_action = ControlActorsAction(input_service)
+    
     #Running script
     script["output"] = [draw_actors_action]
     script["input"] = [control_actors_action]
