@@ -21,6 +21,11 @@ class Director(arcade.Window):
                                                          self.wall_list)
 
     def on_update(self, delta_time):
+        #Checks to see if any food is left, then closes the window if 0 or less is left. Otherwise, continues as normal.
+        #GAME WINS CONDITION
+        if len(self.food_list) <= 0:
+            arcade.close_window()
+
         self._cue_action("update")
         self.physics_engine.update()
 
