@@ -36,6 +36,7 @@ class ArcadeInputService:
 
         if arcade.key.LEFT in self._keys:
             x = -1
+            
            
         elif arcade.key.RIGHT in self._keys:
             x = 1

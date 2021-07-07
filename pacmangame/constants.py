@@ -9,10 +9,9 @@ PATH = os.path.dirname(os.path.abspath(__file__))
 MAP = os.path.join(PATH, 'PacMan-Final.tmx')
 MAP_NAME = 'Pac-Man'
 
-ACTOR_SCALE = .25
+ACTOR_SCALE = .22
 MAP_SCALE = .25
-MOVE_SCALE = 7
-STAGE_SCALE = .26
+MOVE_SCALE = 1.25
 
 PAC_MAN_X = MAX_X/2
 PAC_MAN_Y = MAX_Y/2.21

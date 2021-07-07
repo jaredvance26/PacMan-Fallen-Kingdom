@@ -19,6 +19,7 @@ class HandleCollisionsAction(Action):
         pacman = cast['pacman'][0]
         ghosts = cast['ghosts']
         walls = cast['walls']
+        food = cast['food']
 
         if pacman.top > constants.MAX_Y:
             pacman.top = constants.MAX_Y
@@ -28,23 +29,12 @@ class HandleCollisionsAction(Action):
             pacman.right = constants.MAX_X
         elif pacman.bottom < 0:
             pacman.bottom = 0
-
-        if len(pacman.collides_with_list(walls)) > 0:
-          pass
-            
-
-        
-        #Handle collisions to the wall
-        wall_hit_list = arcade.check_for_collision_with_list(pacman, walls)
-        for wall in wall_hit_list:
-            if pacman.top > wall.bottom:
-                pacman.top = wall.bottom
-            elif pacman.bottom > wall.top:
-                pacman.bottom = wall.top
-            elif pacman.right > wall.left:
-                pacman.right = wall.left
-            elif pacman.left > wall.right:
-                pacman.left = wall.right
+    
+        #Handle collisions with food
+        food_hit_list = arcade.check_for_collision_with_list(pacman, food)
+        for f in food_hit_list:
+            f.remove_from_sprite_lists()
+            arcade.play_sound(constants.MOVE_SOUND)
         
         #Handle collisions to ghosts
         if len(pacman.collides_with_list(ghosts)) > 0:
