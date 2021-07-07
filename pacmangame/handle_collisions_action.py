@@ -24,6 +24,7 @@ class HandleCollisionsAction(Action):
         ghosts = cast['ghosts']
         walls = cast['walls']
         food = cast['food']
+        icons = cast['icon']
 
         if pacman.top > constants.MAX_Y:
             pacman.top = constants.MAX_Y
@@ -45,6 +46,6 @@ class HandleCollisionsAction(Action):
         #Handle collisions to ghosts
         if len(pacman.collides_with_list(ghosts)) > 0:
             arcade.play_sound(constants.DEATH_SOUND)
-            arcade.close_window()
+            icons.pop()
             
         

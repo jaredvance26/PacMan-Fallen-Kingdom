@@ -30,9 +30,11 @@ class DrawActorsAction(Action):
         self._output_service.clear_screen()
         pacman = cast['pacman'][0]
         ghosts = cast['ghosts']
+        icon = cast['icon']
 
         
         self._output_service.draw_actor(pacman)
         self._output_service.draw_actor(ghosts)
+        self._output_service.draw_actor(icon)
 
 
