@@ -9,6 +9,9 @@ class HandleCollisionsAction(Action):
     Stereotype:
         Controller
     """
+    def __init__(self):
+        """sets a variable to track how many rotations the game has gone through since the last time a sound was played for food collection"""
+        self.soundCount = 0
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -16,6 +19,7 @@ class HandleCollisionsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
+        self.soundCount -= 1
         pacman = cast['pacman'][0]
         ghosts = cast['ghosts']
         walls = cast['walls']
@@ -34,7 +38,9 @@ class HandleCollisionsAction(Action):
         food_hit_list = arcade.check_for_collision_with_list(pacman, food)
         for f in food_hit_list:
             f.remove_from_sprite_lists()
-            arcade.play_sound(constants.MOVE_SOUND)
+            if self.soundCount <= 0:
+                arcade.play_sound(constants.MOVE_SOUND)
+                self.soundCount = 33
         
         #Handle collisions to ghosts
         if len(pacman.collides_with_list(ghosts)) > 0:
