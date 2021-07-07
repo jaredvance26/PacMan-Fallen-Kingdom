@@ -9,9 +9,14 @@ PATH = os.path.dirname(os.path.abspath(__file__))
 MAP = os.path.join(PATH, 'PacMan-Final.tmx')
 MAP_NAME = 'Pac-Man'
 
+ICON_SCALE = .75
+
 ACTOR_SCALE = .22
 MAP_SCALE = .25
 MOVE_SCALE = 1.25
+
+ICON_X = 30
+ICON_Y = 15
 
 PAC_MAN_X = MAX_X/2
 PAC_MAN_Y = MAX_Y/2.21
@@ -26,7 +31,7 @@ CLYEDE_Y = BLINKY_Y
 INKY_Y = BLINKY_Y
 PINKY_Y = BLINKY_Y
 
-
+ICON_IMAGE = os.path.join(PATH, '..', 'images', 'pixel-pac-man-icon.png')
 PACMAN_IMAGE = os.path.join(PATH, '..', 'images', 'character-pac-man.png')
 BLINKY_IMAGE = os.path.join(PATH, '..', 'images', 'character-blinky.png')
 CLYDE_IMAGE = os.path.join(PATH, '..', 'images', 'character-clyde.png')

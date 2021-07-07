@@ -9,18 +9,29 @@ from pacmangame.output_service import ArcadeOutputService
 from pacmangame.pacman import PacMan
 from pacmangame.director import Director
 from pacmangame.ghost import Ghost
-
+from pacmangame.icon import Icon
 import arcade
 import random
 
 def main():
     output_service = ArcadeOutputService()
     input_service = ArcadeInputService()
+
+
     
     #Creating Pac-Man and Ghosts
     cast = {}
     ghost_list = arcade.SpriteList()
+    icon_list = arcade.SpriteList()
     pacman = PacMan()
+
+    #Adding icon lives
+    icon_one = Icon(constants.ICON_X, constants.ICON_Y)
+    icon_list.append(icon_one)
+    icon_two = Icon(constants.ICON_X + 50, constants.ICON_Y)
+    icon_list.append(icon_two)
+    icon_three = Icon(constants.ICON_X + 100, constants.ICON_Y)
+    icon_list.append(icon_three)
     
     #Adding images
     pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y)
@@ -43,10 +54,12 @@ def main():
     
     
     #Adding to cast dictionary
+    cast['icon'] = icon_list
     cast['pacman'] = [pacman]
     cast['ghosts'] = ghost_list
     cast['walls'] = wall_list
     cast['food'] = food_list
+    
     
     #Creating script
     script = {}
