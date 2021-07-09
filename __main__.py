@@ -39,7 +39,6 @@ def main():
     map_name = constants.MAP_NAME
     wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.MAP_SCALE, use_spatial_hash = True)
     food_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Food', scaling = constants.MAP_SCALE, use_spatial_hash = True)
-    physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
     
     #Adding to cast dictionary
     cast['pacman'] = [pacman]
