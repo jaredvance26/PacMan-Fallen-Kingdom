@@ -51,7 +51,7 @@ def main():
     script = {}
     draw_actors_action = DrawActorsAction(output_service)
     move_actors_action = MoveActorsAction()
-    handle_collisions_action = HandleCollisionsAction()
+    handle_collisions_action = HandleCollisionsAction(draw_actors_action.get_Score())
     control_actors_action = ControlActorsAction(input_service)
     
     #Running script
