@@ -32,9 +32,13 @@ class Director(arcade.Window):
 
         self._cue_action("update")
         self.physics_engine.update()
+        self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
         self.blinky_engine.update()
+        self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
         self.clyde_engine.update()
+        self._cast['ghosts'][2].follow_sprite(self._cast['pacman'][0])
         self.inky_engine.update()
+        self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
         self.pinky_engine.update()
 
     def on_draw(self):

@@ -2,13 +2,15 @@ from pacmangame.point import Point
 from pacmangame import constants
 import arcade
 import random
+import math
 
 class Ghost(arcade.Sprite):
-    def __init__(self, image, x, y):
+    def __init__(self, image, x, y, wall_list):
         super().__init__(image, constants.ACTOR_SCALE)
-
         self.center_x = x
         self.center_y = y
+        self.wall_list = wall_list
+        self.wall_list = arcade.AStarBarrierList(self, self.wall_list, 8164800, 0, constants.MAX_X, 0, constants.MAX_Y)
 
     def follow_sprite(self, player_sprite):
         """
@@ -22,10 +24,17 @@ class Ghost(arcade.Sprite):
 
         self.center_x += self.change_x
         self.center_y += self.change_y
+        self.path = arcade.astar_calculate_path(self.position,
+                                                    player_sprite.position,
+                                                    self.wall_list,
+                                                    diagonal_movement=False)
+        print(self.path,"->", self.position)
 
-        # Random 1 in 100 chance that we'll change from our old direction and
-        # then re-aim toward the player
-        if random.randrange(100) == 0:
+        # if self.center_x and self.center_y in self.path:
+        #     self.center_x += self.change_x
+        #     self.center_y += self.change_y 
+        
+        if random.randrange(150) == 0:
             start_x = self.center_x
             start_y = self.center_y
 
@@ -42,6 +51,5 @@ class Ghost(arcade.Sprite):
 
             # Taking into account the angle, calculate our change_x
             # and change_y. Velocity is how fast the bullet travels.
-            self.change_x = math.cos(angle) * COIN_SPEED
-            self.change_y = math.sin(angle) * COIN_SPEED
-
+            self.change_x = math.cos(angle) * 1
+            self.change_y = math.sin(angle) * 1

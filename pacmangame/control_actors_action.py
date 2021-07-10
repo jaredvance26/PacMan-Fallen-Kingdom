@@ -40,5 +40,5 @@ class ControlActorsAction(Action):
         pacman.change_x = direction.get_x()
         pacman.change_y = direction.get_y()
 
-        blinky.change_x = direction.get_x()
-        blinky.change_y = direction.get_y()
+        # blinky.change_x = direction.get_x()
+        # blinky.change_y = direction.get_y()
