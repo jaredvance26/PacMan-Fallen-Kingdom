@@ -27,9 +27,7 @@ class HandleCollisionsAction(Action):
         food = cast['food']
         icons = cast['icon']
 
-        pac_x = pacman.Point.get_x()
-        pac_y = pacman.Point.get_y()
-
+    
         if pacman.top > constants.MAX_Y:
             pacman.top = constants.MAX_Y
         elif pacman.right > constants.MAX_X:
@@ -51,8 +49,7 @@ class HandleCollisionsAction(Action):
         if len(pacman.collides_with_list(ghosts)) > 0:
             arcade.play_sound(constants.DEATH_SOUND)
             icons.pop()
-            pac_x = constants.PAC_MAN_X
-            pac_y = constants.PAC_MAN_Y
+
 
             
 
