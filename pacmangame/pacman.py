@@ -9,16 +9,16 @@ class PacMan(arcade.Sprite):
         self.textures = []
 
 
+
+        texture = arcade.load_texture(constants.PACMAN_LEFT)
+        self.textures.append(texture)
+
         texture = arcade.load_texture(constants.PACMAN_IMAGE)
         self.textures.append(texture)
 
         self.center_x = constants.PAC_MAN_X 
         self.center_y = constants.PAC_MAN_Y
 
-        if self.change_x < 0:
-            self.texture = self.textures[constants.PACMAN_LEFT]
-        elif self.change_x > 0:
-            self.texture = self.textures[constants.PACMAN_IMAGE]
 
         self.texture = texture
 

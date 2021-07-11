@@ -2,6 +2,7 @@ from pacmangame import constants
 from pacmangame.action import Action
 from pacmangame.point import Point
 
+
 class MoveActorsAction(Action):
     """A code template for moving actors. The responsibility of this class of
     objects is move any actor that has a velocity more than zero.
@@ -36,6 +37,13 @@ class MoveActorsAction(Action):
         Args:
             actor (Actor): The actor to move.
         """
+        pacman = cast['pacman'][0]
 
         actor.center_x = actor.center_x + actor.change_x
         actor.center_y = actor.center_y + actor.change_y
+
+        if self.change_x < 0:
+            self.texture = self.textures[constants.TEXTURE_LEFT]
+        elif self.change_x > 0:
+            self.texture = self.textures[constants.TEXTURE_RIGHT]
+
