@@ -12,6 +12,7 @@ class Director(arcade.Window):
         self._input_service = input_service
         self.wall_list = cast['walls']
         self.food_list = cast['food']
+        self.icon_list = cast['icon']
 
     def setup(self):
         """ Initalizes the screen """
@@ -40,6 +41,11 @@ class Director(arcade.Window):
         self.inky_engine.update()
         self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
         self.pinky_engine.update()
+
+        if len(self.icon_list) <= 0:
+            arcade.close_window()
+
+        
 
     def on_draw(self):
         self._cue_action("output")
