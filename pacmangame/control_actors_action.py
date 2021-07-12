@@ -1,5 +1,7 @@
 from pacmangame import constants
 from pacmangame.action import Action
+from pacmangame.point import Point
+import random
 
 class ControlActorsAction(Action):
     """A code template for controlling actors. The responsibility of this
@@ -27,7 +29,16 @@ class ControlActorsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         direction = self._input_service.get_direction().scale(constants.MOVE_SCALE)
+        # ghost_dir = self._input_service.ghost_direction().scale(constants.MOVE_SCALE)
         
         pacman = cast['pacman'][0]
+        blinky = cast['ghosts'][0]
+        clyde = cast['ghosts'][1]
+        inky = cast['ghosts'][2]
+        pinky = cast['ghosts'][3]
+
         pacman.change_x = direction.get_x()
         pacman.change_y = direction.get_y()
+
+        # blinky.change_x = direction.get_x()
+        # blinky.change_y = direction.get_y()

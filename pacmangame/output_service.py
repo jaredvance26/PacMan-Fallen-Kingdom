@@ -20,8 +20,9 @@ class ArcadeOutputService(arcade.Window):
         pass 
         
 
-    def clear_screen(self):
+    def clear_screen(self, score):
         arcade.start_render()
+        arcade.draw_text(score, 510, 0, arcade.color.WHITE, 35)
 
     def draw_actor(self, actor):
         """Renders the given actor's text on the screen.

@@ -95,3 +95,5 @@ class Point:
         y = self._y * scale_amount
 
         return Point(x, y)
+
+    

@@ -33,11 +33,18 @@ def main():
     icon_three = Icon(constants.ICON_X + 100, constants.ICON_Y)
     icon_list.append(icon_three)
     
+    #Creating Map
+    map = arcade.tilemap.read_tmx(constants.MAP)
+    map_name = constants.MAP_NAME
+    food_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Food', scaling = constants.MAP_SCALE, use_spatial_hash = True)
+    wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.MAP_SCALE, use_spatial_hash = True)
+    physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
+    
     #Adding images
-    pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y)
-    blinky = Ghost(constants.BLINKY_IMAGE, constants.BLINKY_X, constants.BLINKY_Y)
-    clyde = Ghost(constants.CLYDE_IMAGE, constants.CLYEDE_X, constants. CLYEDE_Y)
-    inky = Ghost(constants.INKY_IMAGE, constants.INKY_X, constants.INKY_Y)
+    pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y, wall_list)
+    blinky = Ghost(constants.BLINKY_IMAGE, constants.BLINKY_X, constants.BLINKY_Y, wall_list)
+    clyde = Ghost(constants.CLYDE_IMAGE, constants.CLYEDE_X, constants. CLYEDE_Y, wall_list)
+    inky = Ghost(constants.INKY_IMAGE, constants.INKY_X, constants.INKY_Y, wall_list)
     
     #Adding ghosts to ghost list
     ghost_list.append(blinky)
@@ -45,14 +52,6 @@ def main():
     ghost_list.append(inky)
     ghost_list.append(pinky)
 
-    #Creating Map
-    map = arcade.tilemap.read_tmx(constants.MAP)
-    map_name = constants.MAP_NAME
-    wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.MAP_SCALE, use_spatial_hash = True)
-    food_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Food', scaling = constants.MAP_SCALE, use_spatial_hash = True)
-    physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
-    
-    
     #Adding to cast dictionary
     cast['icon'] = icon_list
     cast['pacman'] = [pacman]
@@ -60,12 +59,11 @@ def main():
     cast['walls'] = wall_list
     cast['food'] = food_list
     
-    
     #Creating script
     script = {}
     draw_actors_action = DrawActorsAction(output_service)
     move_actors_action = MoveActorsAction()
-    handle_collisions_action = HandleCollisionsAction()
+    handle_collisions_action = HandleCollisionsAction(draw_actors_action.get_Score())
     control_actors_action = ControlActorsAction(input_service)
     
     #Running script

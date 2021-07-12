@@ -51,5 +51,3 @@ class ArcadeInputService:
 
         velocity = Point(x, y)
         return velocity
-            
-

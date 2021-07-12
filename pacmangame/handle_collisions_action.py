@@ -3,6 +3,7 @@ from pacmangame import constants
 from pacmangame.action import Action
 from pacmangame.point import Point
 import arcade
+from pacmangame.draw_actors_action import DrawActorsAction
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -10,9 +11,10 @@ class HandleCollisionsAction(Action):
     Stereotype:
         Controller
     """
-    def __init__(self):
+    def __init__(self, score):
         """sets a variable to track how many rotations the game has gone through since the last time a sound was played for food collection"""
         self.soundCount = 0
+        self.score = score
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -41,6 +43,7 @@ class HandleCollisionsAction(Action):
         food_hit_list = arcade.check_for_collision_with_list(pacman, food)
         for f in food_hit_list:
             f.remove_from_sprite_lists()
+            self.score.change_Score()
             if self.soundCount <= 0:
                 arcade.play_sound(constants.MOVE_SOUND)
                 self.soundCount = 33
