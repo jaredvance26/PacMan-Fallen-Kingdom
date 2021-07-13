@@ -8,7 +8,19 @@ class PacMan(arcade.Sprite):
         self.scale = constants.ACTOR_SCALE
         self.textures = []
 
+        #Facing Left
+        texture = arcade.load_texture(constants.PACMAN_LEFT)
+        self.textures.append(texture)
 
+        #Facing Bottom 
+        texture = arcade.load_texture(constants.PACMAN_BOTTOM)
+        self.textures.append(texture)
+
+        #Facing Top
+        texture = arcade.load_texture(constants.PACMAN_TOP)
+        self.textures.append(texture)
+        
+        #Facing Right
         texture = arcade.load_texture(constants.PACMAN_IMAGE)
         self.textures.append(texture)
 

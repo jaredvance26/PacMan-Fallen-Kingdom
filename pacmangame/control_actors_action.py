@@ -40,5 +40,14 @@ class ControlActorsAction(Action):
         pacman.change_x = direction.get_x()
         pacman.change_y = direction.get_y()
 
+        if pacman.change_x < 0:
+            pacman.texture = pacman.textures[constants.TEXTURE_LEFT]
+        elif pacman.change_x > 0:
+            pacman.texture = pacman.textures[constants.TEXTURE_RIGHT]
+        elif pacman.change_y < 0:
+            pacman.texture = pacman.textures[constants.TEXTURE_BOTTOM]
+        elif pacman.change_y > 0:
+            pacman.texture = pacman.textures[constants.TEXTURE_TOP]
+
         # blinky.change_x = direction.get_x()
         # blinky.change_y = direction.get_y()
