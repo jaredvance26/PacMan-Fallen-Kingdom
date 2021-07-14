@@ -41,10 +41,10 @@ def main():
     physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
     
     #Adding images
-    pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y, wall_list)
-    blinky = Ghost(constants.BLINKY_IMAGE, constants.BLINKY_X, constants.BLINKY_Y, wall_list)
-    clyde = Ghost(constants.CLYDE_IMAGE, constants.CLYEDE_X, constants. CLYEDE_Y, wall_list)
-    inky = Ghost(constants.INKY_IMAGE, constants.INKY_X, constants.INKY_Y, wall_list)
+    pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y, wall_list, constants.PINKY_MOVE)
+    blinky = Ghost(constants.BLINKY_IMAGE, constants.BLINKY_X, constants.BLINKY_Y, wall_list, constants.BLINKY_MOVE)
+    clyde = Ghost(constants.CLYDE_IMAGE, constants.CLYEDE_X, constants. CLYEDE_Y, wall_list, constants.CLYDE_MOVE)
+    inky = Ghost(constants.INKY_IMAGE, constants.INKY_X, constants.INKY_Y, wall_list, constants.INKY_MOVE)
     
     #Adding ghosts to ghost list
     ghost_list.append(blinky)
