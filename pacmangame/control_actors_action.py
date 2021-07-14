@@ -21,6 +21,7 @@ class ControlActorsAction(Action):
             input_service (InputService): An instance of InputService.
         """
         self._input_service = input_service
+        self.count = 0
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -37,6 +38,8 @@ class ControlActorsAction(Action):
         inky = cast['ghosts'][2]
         pinky = cast['ghosts'][3]
 
+      
+
         pacman.change_x = direction.get_x()
         pacman.change_y = direction.get_y()
 
@@ -49,5 +52,4 @@ class ControlActorsAction(Action):
         elif pacman.change_y > 0:
             pacman.texture = pacman.textures[constants.TEXTURE_TOP]
 
-        # blinky.change_x = direction.get_x()
-        # blinky.change_y = direction.get_y()
+       
