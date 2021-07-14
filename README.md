@@ -4,7 +4,7 @@ to eat all the food on the screen without getting hit by the ghosts. You have th
 
 ## Getting Started
 ---
-Make sure you have Python 3.8.0 or newer and arcade.0 or new installed and running on your machine. You can install arcade by reading these instructions: https://arcade.academy/installation_from_source.html. 
+Make sure you have Python 3.8.0 or newer and arcade installed and running on your machine. You can install arcade by reading these instructions: https://arcade.academy/installation_from_source.html. 
 
 
 ## Project Structure
@@ -24,8 +24,14 @@ root                    (project root folder)
 
 ## Required Technologies
 ---
-[list required libraries]
+Arcade
+Python 3.8.0
 
 ## Authors
 ---
-[list author names and emails]
+Jared Vance, jaredkvance@gmail.com
+
+Brandon Densmore, den18017@byui.edu
+
+Shandler Rechenberger, ShanRechenberger@gmail.com
+
