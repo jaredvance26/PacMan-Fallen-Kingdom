@@ -7,8 +7,8 @@ class Commands:
     def reset_game(self, cast):
         ghosts = cast["ghosts"]
 
-        cast["pacman"][0].center_x = PAC_MAN_X
-        cast["pacman"][0].center_y = PAC_MAN_Y
+        cast["pacman"][0].center_x = PAC_MAN_X 
+        cast["pacman"][0].center_y = PAC_MAN_Y - 250
 
         ghosts[0].center_x = BLINKY_X
         ghosts[0].center_y = BLINKY_Y
