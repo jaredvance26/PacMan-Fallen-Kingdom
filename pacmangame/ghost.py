@@ -24,13 +24,6 @@ class Ghost(arcade.Sprite):
         #                                             diagonal_movement=False)
         # print(self.path,"->", player_sprite.center_x, player_sprite.center_y)
 
-        # if self.count < 100:
-        #     # self.change_x = 1
-        #     self.change_y = 1
-        #     self.count += 1
-        # elif self.count < 200:
-        #     self.change_x = -1
-        #     self.count += 1
         if self.center_x > player_sprite.center_x:
             self.change_x = -self.move_speed
         else:
@@ -41,8 +34,6 @@ class Ghost(arcade.Sprite):
         else:
             self.change_y = self.move_speed
                
-        
-
         """Option that is slow and runs into walls"""
         # self.center_x += self.change_x
         # self.center_y += self.change_y

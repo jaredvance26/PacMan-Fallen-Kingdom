@@ -36,6 +36,7 @@ class Director(arcade.Window):
         if len(self.food_list) <= 0:
             arcade.close_window()
 
+        #Creates walls and barriers
         self._cue_action("update")
         self.physics_engine.update()
         self.blinky_engine.update()
@@ -43,6 +44,7 @@ class Director(arcade.Window):
         self.inky_engine.update()
         self.pinky_engine.update()
 
+        #Moves the ghosts up and out on first round
         if self.count < 100:
            self.blinky.change_y = 1
            self.inky.change_y = 1
@@ -68,7 +70,6 @@ class Director(arcade.Window):
         #Draw the map
         self.wall_list.draw()
         self.food_list.draw()
-        # self._cast['ghosts'][0].draw_path()
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
