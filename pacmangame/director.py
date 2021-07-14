@@ -45,13 +45,12 @@ class Director(arcade.Window):
         if len(self.icon_list) <= 0:
             arcade.close_window()
 
-        
-
     def on_draw(self):
         self._cue_action("output")
         #Draw the map
         self.wall_list.draw()
         self.food_list.draw()
+        # self._cast['ghosts'][0].draw_path()
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
