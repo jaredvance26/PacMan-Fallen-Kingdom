@@ -1,9 +1,11 @@
-# [PROGRAM NAME] 
-[a description of the program]
+# Pacman
+We created a timeless classic. Pacman is a game where you try
+to eat all the food on the screen without getting hit by the ghosts. You have three lives to eat all of the food. The ghosts are fast and clever so best of luck!
 
 ## Getting Started
 ---
-[how to install and run the program]
+Make sure you have Python 3.8.0 or newer and arcade.0 or new installed and running on your machine. You can install arcade by reading these instructions: https://arcade.academy/installation_from_source.html. 
+
 
 ## Project Structure
 ---
