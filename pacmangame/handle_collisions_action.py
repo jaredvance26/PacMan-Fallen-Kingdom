@@ -1,8 +1,10 @@
 import random
 from pacmangame import constants
+from pacmangame import commands
 from pacmangame.action import Action
 import arcade
 from pacmangame.draw_actors_action import DrawActorsAction
+from pacmangame.commands import Commands
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -14,6 +16,7 @@ class HandleCollisionsAction(Action):
         """sets a variable to track how many rotations the game has gone through since the last time a sound was played for food collection"""
         self.soundCount = 0
         self.score = score
+        self.Command_Holder = Commands()
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -49,6 +52,9 @@ class HandleCollisionsAction(Action):
         #Handle collisions to ghosts
         if len(pacman.collides_with_list(ghosts)) > 0:
             arcade.play_sound(constants.DEATH_SOUND)
-            icons.pop()
-            
+            if len(icons) <= 0:
+                arcade.close_window()
+            else:
+                icons.pop()
+                self.Command_Holder.reset_game(cast)
         
