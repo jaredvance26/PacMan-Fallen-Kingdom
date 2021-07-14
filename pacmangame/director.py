@@ -13,6 +13,11 @@ class Director(arcade.Window):
         self.wall_list = cast['walls']
         self.food_list = cast['food']
         self.icon_list = cast['icon']
+        self.blinky = cast['ghosts'][0]
+        self.clyde = cast['ghosts'][1]
+        self.inky = cast['ghosts'][2]
+        self.pinky = cast['ghosts'][3]
+        self.count = 0
 
     def setup(self):
         """ Initalizes the screen """
@@ -33,14 +38,26 @@ class Director(arcade.Window):
 
         self._cue_action("update")
         self.physics_engine.update()
-        self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
         self.blinky_engine.update()
-        self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
         self.clyde_engine.update()
-        self._cast['ghosts'][2].follow_sprite(self._cast['pacman'][0])
         self.inky_engine.update()
-        self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
         self.pinky_engine.update()
+
+        if self.count < 100:
+           self.blinky.change_y = 1
+           self.inky.change_y = 1
+           self.blinky.change_x = 1
+           self.inky.change_x = -1
+           self.clyde.change_x = 1
+           self.pinky.change_x = -1
+           self.clyde.change_y = 1
+           self.pinky.change_y = 1
+           self.count += 1
+        else:
+            self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
+            self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
+            self._cast['ghosts'][2].follow_sprite(self._cast['pacman'][0])
+            self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
 
         if len(self.icon_list) <= 0:
             arcade.close_window()
