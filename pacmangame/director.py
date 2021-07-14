@@ -19,10 +19,10 @@ class Director(arcade.Window):
         arcade.play_sound(constants.START_SOUND)
         self.physics_engine = arcade.PhysicsEngineSimple(self._cast['pacman'][0],
                                                          self.wall_list)
-        self.blinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][0], self.wall_list)
-        self.clyde_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][1], self.wall_list)
-        self.inky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][2], self.wall_list)
-        self.pinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][3], self.wall_list)
+        # self.blinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][0], self.wall_list)
+        # self.clyde_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][1], self.wall_list)
+        # self.inky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][2], self.wall_list)
+        # self.pinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][3], self.wall_list)
 
     def on_update(self, delta_time):
         #Checks to see if any food is left, then closes the window if 0 or less is left. Otherwise, continues as normal.
@@ -33,19 +33,20 @@ class Director(arcade.Window):
         self._cue_action("update")
         self.physics_engine.update()
         self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
-        self.blinky_engine.update()
-        self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
-        self.clyde_engine.update()
-        self._cast['ghosts'][2].follow_sprite(self._cast['pacman'][0])
-        self.inky_engine.update()
-        self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
-        self.pinky_engine.update()
+        # self.blinky_engine.update()
+        # self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
+        # # self.clyde_engine.update()
+        # self._cast['ghosts'][2].follow_sprite(self._cast['pacman'][0])
+        # # self.inky_engine.update()
+        # self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
+        # self.pinky_engine.update()
 
     def on_draw(self):
         self._cue_action("output")
         #Draw the map
         self.wall_list.draw()
         self.food_list.draw()
+        self._cast['ghosts'][0].draw_path()
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
