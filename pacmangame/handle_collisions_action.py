@@ -17,6 +17,7 @@ class HandleCollisionsAction(Action):
         self.soundCount = 0
         self.score = score
         self.Command_Holder = Commands()
+        self.score_step = 403
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -44,7 +45,7 @@ class HandleCollisionsAction(Action):
         food_hit_list = arcade.check_for_collision_with_list(pacman, food)
         for f in food_hit_list:
             f.remove_from_sprite_lists()
-            self.score.change_Score()
+            self.score.change_Score(self.score_step)
             if self.soundCount <= 0:
                 arcade.play_sound(constants.MOVE_SOUND)
                 self.soundCount = 33
@@ -57,4 +58,5 @@ class HandleCollisionsAction(Action):
             else:
                 icons.pop()
                 self.Command_Holder.reset_game(cast)
+                self.score_step = int(round(self.score_step/2, 0))
         
