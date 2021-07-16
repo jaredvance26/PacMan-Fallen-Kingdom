@@ -26,6 +26,7 @@ root                    (project root folder)
 ---
 Arcade
 Python 3.8.0
+PIL
 
 ## Authors
 ---

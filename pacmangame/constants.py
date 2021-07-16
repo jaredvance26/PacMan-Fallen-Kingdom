@@ -52,6 +52,10 @@ MOVE_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'sounds', 'pacman_chomp.
 DEATH_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'sounds', 'pacman_death.wav'))
 START_SOUND = arcade.load_sound(os.path.join(PATH, '..', 'sounds', 'pacman_beginning.wav'))
 
+LOSE_PIC = os.path.join(PATH, '..', 'images', 'lose.png')
+WIN_PIC = os.path.join(PATH, '..', 'images', 'win.png')
+
+
 
 TEXTURE_LEFT = 0
 TEXTURE_BOTTOM = 1
