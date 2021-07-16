@@ -1,6 +1,7 @@
-# Pacman
-We created a timeless classic. Pacman is a game where you try
-to eat all the food on the screen without getting hit by the ghosts. You have three lives to eat all of the food. The ghosts are fast and clever so best of luck!
+# Pacman Fallen Kingdom
+We created a timeless classic with a twist. Pacman is a game where you try
+to eat all the food on the screen without getting hit by the ghosts. You have three lives to eat all of the food. 
+The twist is that the walls start to disapear, so you better hurry. The ghosts are fast and clever so best of luck!
 
 ## Getting Started
 ---
