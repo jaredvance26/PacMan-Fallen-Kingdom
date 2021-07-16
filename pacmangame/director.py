@@ -88,12 +88,17 @@ class Director(arcade.Window):
             lose_pic.show()
             arcade.close_window()
 
-        if self.count > 250:
-            if len(self.wall_list) > 1:
-                length = len(self.wall_list)
-                self.wall_list.pop(random.randint(0, length-1))
-                self.wall_list.pop(random.randint(0, length-1))
-                self.count = 200
+        # if self.count > 250:
+        #     constants.PINKY_MOVE += .2
+        #     constants.BLINKY_MOVE += .2
+        #     constants.CLYDE_MOVE += .2
+        #     constants.INKY_MOVE += .2
+        #     # if len(self.wall_list) > 1:
+        #         # length = len(self.wall_list)
+        #         # self.wall_list.pop(random.randint(0, length-1))
+        #         # self.wall_list.pop(random.randint(0, length-1))
+        #     self.count = 200
+        # print(constants.INKY_MOVE)
 
 
     def on_draw(self):
