@@ -14,6 +14,7 @@ class Director(arcade.Window):
         self._script = script
         self._input_service = input_service
         self.wall_list = cast['walls']
+        self.boarders = cast['boarders']
         self.food_list = cast['food']
         self.icon_list = cast['icon']
         self.blinky = cast['ghosts'][0]
@@ -30,6 +31,8 @@ class Director(arcade.Window):
         arcade.play_sound(constants.START_SOUND)
         self.physics_engine = arcade.PhysicsEngineSimple(self._cast['pacman'][0],
                                                          self.wall_list)
+        self.physics_engine_2 = arcade.PhysicsEngineSimple(self._cast['pacman'][0],
+                                                         self.boarders)
         self.blinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][0], self.wall_list)
         self.clyde_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][1], self.wall_list)
         self.inky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][2], self.wall_list)
@@ -44,6 +47,7 @@ class Director(arcade.Window):
 
         self._cue_action("update")
         self.physics_engine.update()
+        self.physics_engine_2.update()
         self.blinky_engine.update()
         self.clyde_engine.update()
         self.inky_engine.update()
@@ -75,6 +79,7 @@ class Director(arcade.Window):
         #Draw the map
         self.wall_list.draw()
         self.food_list.draw()
+        self.boarders.draw()
         # self._cast['ghosts'][0].draw_path()
 
     def on_key_press(self, symbol, modifiers):
