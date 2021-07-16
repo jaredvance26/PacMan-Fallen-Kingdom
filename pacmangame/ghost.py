@@ -35,10 +35,10 @@ class Ghost(arcade.Sprite):
         else:
             self.change_y = self.move_speed
 
-        if self.count > 200 and self.move_speed == (constants.PACMAN_MOVE_SCALE + .2):
-            self.move_speed += .05
+        if self.count > 200 and self.move_speed <= (constants.PACMAN_MOVE_SCALE):
+            self.move_speed += .025
             self.count = 100
-
+        print(self.move_speed)
                
         """Option that is slow and runs into walls"""
         # self.center_x += self.change_x
