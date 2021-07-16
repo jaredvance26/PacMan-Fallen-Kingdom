@@ -2,7 +2,10 @@ import arcade
 from pacmangame import constants
 from pacmangame.pacman import PacMan
 import random
+from PIL import Image
 
+win_pic = Image.open(constants.WIN_PIC)
+lose_pic = Image.open(constants.LOSE_PIC)
 
 class Director(arcade.Window):
     def __init__(self, cast, script, input_service):
@@ -12,6 +15,7 @@ class Director(arcade.Window):
         self._script = script
         self._input_service = input_service
         self.wall_list = cast['walls']
+        self.boarders = cast['boarders']
         self.food_list = cast['food']
         self.icon_list = cast['icon']
         self.blinky = cast['ghosts'][0]
@@ -21,12 +25,16 @@ class Director(arcade.Window):
         self.count = 0
         self.mod_count = 0
 
+      
+
     def setup(self):
         """ Initalizes the screen """
         arcade.set_background_color(arcade.color.BLACK)
         arcade.play_sound(constants.START_SOUND)
         self.physics_engine = arcade.PhysicsEngineSimple(self._cast['pacman'][0],
                                                          self.wall_list)
+        self.physics_engine_2 = arcade.PhysicsEngineSimple(self._cast['pacman'][0],
+                                                         self.boarders)
         self.blinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][0], self.wall_list)
         self.clyde_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][1], self.wall_list)
         self.inky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][2], self.wall_list)
@@ -38,11 +46,13 @@ class Director(arcade.Window):
 
         #GAME WINS CONDITION
         if len(self.food_list) <= 0:
+            win_pic.show()
             arcade.close_window()
 
         #Creates walls and barriers
         self._cue_action("update")
         self.physics_engine.update()
+        self.physics_engine_2.update()
         self.blinky_engine.update()
         self.clyde_engine.update()
         self.inky_engine.update()
@@ -65,6 +75,7 @@ class Director(arcade.Window):
             self._cast['ghosts'][3].follow_sprite(self._cast['pacman'][0])
 
         if len(self.icon_list) <= 0:
+            lose_pic.show()
             arcade.close_window()
 
         if self.count > 200:
@@ -79,6 +90,10 @@ class Director(arcade.Window):
         #Draw the map
         self.wall_list.draw()
         self.food_list.draw()
+
+        self.boarders.draw()
+        # self._cast['ghosts'][0].draw_path()
+
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
