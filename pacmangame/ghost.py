@@ -14,7 +14,6 @@ class Ghost(arcade.Sprite):
         self.Awall_list = arcade.AStarBarrierList(self, self.wall_list, 64, 0, constants.MAX_X, 0, constants.MAX_Y)
         self.move_speed = move_speed
         self.count = 0
-        self.did_collide = False
 
     def follow_sprite(self, player_sprite):
         """ Option that follows the path around the walls """
@@ -23,6 +22,8 @@ class Ghost(arcade.Sprite):
         #                                             self.Awall_list,
         #                                             diagonal_movement=False)
         # print(self.path,"->", player_sprite.center_x, player_sprite.center_y)
+
+        self.count += 1
 
         if self.center_x > player_sprite.center_x:
             self.change_x = -self.move_speed
@@ -33,6 +34,11 @@ class Ghost(arcade.Sprite):
             self.change_y = -self.move_speed
         else:
             self.change_y = self.move_speed
+
+        if self.count > 200 and self.move_speed == (constants.PACMAN_MOVE_SCALE + .2):
+            self.move_speed += .05
+            self.count = 100
+
                
         """Option that is slow and runs into walls"""
         # self.center_x += self.change_x
