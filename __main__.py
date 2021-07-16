@@ -38,7 +38,9 @@ def main():
     map_name = constants.MAP_NAME
     food_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Food', scaling = constants.MAP_SCALE, use_spatial_hash = True)
     wall_list = arcade.tilemap.process_layer(map_object = map, layer_name = 'Boarders', scaling = constants.MAP_SCALE, use_spatial_hash = True)
+    outside_Wall_List = arcade.tilemap.process_layer(map_object = map, layer_name = 'Outer Layer', scaling = constants.MAP_SCALE, use_spatial_hash = True)
     physics_engine = arcade.PhysicsEnginePlatformer(pacman, wall_list)
+    physics_engine_2 = arcade.PhysicsEnginePlatformer(pacman, outside_Wall_List)
     
     #Adding images
     pinky = Ghost(constants.PINKY_IMAGE, constants.PINKY_X, constants.PINKY_Y, wall_list, constants.PINKY_MOVE)
@@ -58,6 +60,7 @@ def main():
     cast['ghosts'] = ghost_list
     cast['walls'] = wall_list
     cast['food'] = food_list
+    cast['boarders'] = outside_Wall_List
     
     #Creating script
     script = {}

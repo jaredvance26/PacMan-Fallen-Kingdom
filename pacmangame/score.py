@@ -1,4 +1,5 @@
 class Score:
+    """A Class """
 
     def __init__(self):
         self.score = 0
