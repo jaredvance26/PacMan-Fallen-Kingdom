@@ -30,16 +30,8 @@ class ControlActorsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         direction = self._input_service.get_direction().scale(constants.PACMAN_MOVE_SCALE)
-        # ghost_dir = self._input_service.ghost_direction().scale(constants.MOVE_SCALE)
         
         pacman = cast['pacman'][0]
-        blinky = cast['ghosts'][0]
-        clyde = cast['ghosts'][1]
-        inky = cast['ghosts'][2]
-        pinky = cast['ghosts'][3]
-
-      
-
         pacman.change_x = direction.get_x()
         pacman.change_y = direction.get_y()
 

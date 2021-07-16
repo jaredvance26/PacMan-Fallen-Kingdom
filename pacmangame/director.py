@@ -1,6 +1,7 @@
 import arcade
 from pacmangame import constants
 from pacmangame.pacman import PacMan
+import random
 from PIL import Image
 
 win_pic = Image.open(constants.WIN_PIC)
@@ -22,6 +23,7 @@ class Director(arcade.Window):
         self.inky = cast['ghosts'][2]
         self.pinky = cast['ghosts'][3]
         self.count = 0
+        self.mod_count = 0
 
       
 
@@ -40,11 +42,14 @@ class Director(arcade.Window):
 
     def on_update(self, delta_time):
         #Checks to see if any food is left, then closes the window if 0 or less is left. Otherwise, continues as normal.
+        self.count += 1
+
         #GAME WINS CONDITION
         if len(self.food_list) <= 0:
             win_pic.show()
             arcade.close_window()
 
+        #Creates walls and barriers
         self._cue_action("update")
         self.physics_engine.update()
         self.physics_engine_2.update()
@@ -53,6 +58,7 @@ class Director(arcade.Window):
         self.inky_engine.update()
         self.pinky_engine.update()
 
+        #Moves the ghosts up and out on first round
         if self.count < 100:
            self.blinky.change_y = 1
            self.inky.change_y = 1
@@ -62,7 +68,6 @@ class Director(arcade.Window):
            self.pinky.change_x = -1
            self.clyde.change_y = 1
            self.pinky.change_y = 1
-           self.count += 1
         else:
             self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
             self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
@@ -73,14 +78,22 @@ class Director(arcade.Window):
             lose_pic.show()
             arcade.close_window()
 
+        if self.count > 200:
+            if len(self.wall_list) > 1:
+                length = len(self.wall_list)
+                self.wall_list.pop(random.randint(0, length-1))
+                self.count = 100
+
 
     def on_draw(self):
         self._cue_action("output")
         #Draw the map
         self.wall_list.draw()
         self.food_list.draw()
+
         self.boarders.draw()
         # self._cast['ghosts'][0].draw_path()
+
 
     def on_key_press(self, symbol, modifiers):
         self._input_service.set_key(symbol, modifiers)
