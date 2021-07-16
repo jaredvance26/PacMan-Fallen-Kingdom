@@ -1,6 +1,7 @@
 import arcade
 from pacmangame import constants
 from pacmangame.pacman import PacMan
+import random
 
 
 class Director(arcade.Window):
@@ -18,6 +19,7 @@ class Director(arcade.Window):
         self.inky = cast['ghosts'][2]
         self.pinky = cast['ghosts'][3]
         self.count = 0
+        self.mod_count = 0
 
     def setup(self):
         """ Initalizes the screen """
@@ -32,6 +34,8 @@ class Director(arcade.Window):
 
     def on_update(self, delta_time):
         #Checks to see if any food is left, then closes the window if 0 or less is left. Otherwise, continues as normal.
+        self.count += 1
+
         #GAME WINS CONDITION
         if len(self.food_list) <= 0:
             arcade.close_window()
@@ -54,7 +58,6 @@ class Director(arcade.Window):
            self.pinky.change_x = -1
            self.clyde.change_y = 1
            self.pinky.change_y = 1
-           self.count += 1
         else:
             self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
             self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
@@ -63,6 +66,12 @@ class Director(arcade.Window):
 
         if len(self.icon_list) <= 0:
             arcade.close_window()
+
+        if self.count > 200:
+            if len(self.wall_list) > 1:
+                length = len(self.wall_list)
+                self.wall_list.pop(random.randint(0, length-1))
+                self.count = 100
 
 
     def on_draw(self):
