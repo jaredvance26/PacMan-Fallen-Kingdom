@@ -35,12 +35,18 @@ class ControlActorsAction(Action):
         pacman.change_x = direction.get_x()
         pacman.change_y = direction.get_y()
 
+        #Changes which direction PacMan faces 
+
+        #Change Left
         if pacman.change_x < 0:
             pacman.texture = pacman.textures[constants.TEXTURE_LEFT]
+        #Change Right
         elif pacman.change_x > 0:
             pacman.texture = pacman.textures[constants.TEXTURE_RIGHT]
+        #Change Bottom
         elif pacman.change_y < 0:
             pacman.texture = pacman.textures[constants.TEXTURE_BOTTOM]
+        #Change Up
         elif pacman.change_y > 0:
             pacman.texture = pacman.textures[constants.TEXTURE_TOP]
 
