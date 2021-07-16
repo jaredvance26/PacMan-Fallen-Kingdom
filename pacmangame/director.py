@@ -39,6 +39,10 @@ class Director(arcade.Window):
         self.clyde_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][1], self.wall_list)
         self.inky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][2], self.wall_list)
         self.pinky_engine = arcade.PhysicsEngineSimple(self._cast['ghosts'][3], self.wall_list)
+        self.blinky_engine2 = arcade.PhysicsEngineSimple(self._cast['ghosts'][0], self.boarders)
+        self.clyde_engine2 = arcade.PhysicsEngineSimple(self._cast['ghosts'][1], self.boarders)
+        self.inky_engine2 = arcade.PhysicsEngineSimple(self._cast['ghosts'][2], self.boarders)
+        self.pinky_engine2 = arcade.PhysicsEngineSimple(self._cast['ghosts'][3], self.boarders)
 
     def on_update(self, delta_time):
         #Checks to see if any food is left, then closes the window if 0 or less is left. Otherwise, continues as normal.
@@ -53,21 +57,27 @@ class Director(arcade.Window):
         self._cue_action("update")
         self.physics_engine.update()
         self.physics_engine_2.update()
+        
         self.blinky_engine.update()
         self.clyde_engine.update()
         self.inky_engine.update()
         self.pinky_engine.update()
 
+        self.blinky_engine2.update()
+        self.clyde_engine2.update()
+        self.inky_engine2.update()
+        self.pinky_engine2.update()
+
         #Moves the ghosts up and out on first round
         if self.count < 100:
-           self.blinky.change_y = 1
-           self.inky.change_y = 1
-           self.blinky.change_x = 1
-           self.inky.change_x = -1
-           self.clyde.change_x = 1
-           self.pinky.change_x = -1
-           self.clyde.change_y = 1
-           self.pinky.change_y = 1
+           self.blinky.change_y = constants.BLINKY_MOVE
+           self.inky.change_y = constants.INKY_MOVE
+           self.blinky.change_x = constants.BLINKY_MOVE
+           self.inky.change_x = -constants.INKY_MOVE
+           self.clyde.change_x = constants.CLYDE_MOVE
+           self.pinky.change_x = -constants.PINKY_MOVE
+           self.clyde.change_y = constants.CLYDE_MOVE
+           self.pinky.change_y = constants.PINKY_MOVE
         else:
             self._cast['ghosts'][0].follow_sprite(self._cast['pacman'][0])
             self._cast['ghosts'][1].follow_sprite(self._cast['pacman'][0])
@@ -78,11 +88,12 @@ class Director(arcade.Window):
             lose_pic.show()
             arcade.close_window()
 
-        if self.count > 200:
+        if self.count > 250:
             if len(self.wall_list) > 1:
                 length = len(self.wall_list)
                 self.wall_list.pop(random.randint(0, length-1))
-                self.count = 100
+                self.wall_list.pop(random.randint(0, length-1))
+                self.count = 200
 
 
     def on_draw(self):
