@@ -61,13 +61,13 @@ class HandleCollisionsAction(Action):
                 icons.pop()
                 self.Command_Holder.reset_game(cast)
                 self.score_step = int(round(self.score_step/2, 0))
-        if self.count > 0:
-            ghosts[0].change_x = 1
-            ghosts[0].change_y = 1
-            ghosts[1].change_x = 1
-            ghosts[1].change_y = 1
-            ghosts[2].change_x = -1
-            ghosts[2].change_y = 1
-            ghosts[3].change_x = -1
-            ghosts[3].change_y = 1
-            self.count -= 1
+        # if self.count > 0:
+        #     ghosts[0].change_x = 1
+        #     ghosts[0].change_y = 1
+        #     ghosts[1].change_x = 1
+        #     ghosts[1].change_y = 1
+        #     ghosts[2].change_x = -1
+        #     ghosts[2].change_y = 1
+        #     ghosts[3].change_x = -1
+        #     ghosts[3].change_y = 1
+        #     self.count -= 1
